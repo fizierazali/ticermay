@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overseas Babysitting · Teacher Maisarah</title>
+  <meta name="description" content="Clean, modern iOS-style portfolio for Teacher Maisarah, babysitter & early childhood educator in Kuala Lumpur, Malaysia.">
+
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Flag Icons (CDN) -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+
+  <script defer src="js/main.js"></script>
+
+  <style>
+    /* Saiz & align bendera kecil di sebelah kanan nama negara */
+    .country-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;               /* jarak antara teks & bendera */
+      margin: 0;
+    }
+    .country-title .fi {
+      font-size: 16px;        /* kecil & kemas; ubah ke 14–18 ikut selera */
+      line-height: 1;
+      vertical-align: middle;
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
+      border-radius: 3px;     /* sedikit rounded supaya match card style */
+    }
+  </style>
+</head>
+
+<body>
+<header class="navbar glass">
+  <div class="brand">May</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="overseas.html" aria-current="page">Overseas</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card fade">
+    <h1>Overseas Babysitting</h1>
+    <p>Experience with families in the UK, Singapore & Saudi Arabia — blending care routines with learning activities, cultural sensitivity and clear parent communication.</p>
+
+    <div class="grid three">
+      <article class="chip card">
+        <h3 class="country-title">
+          United Kingdom
+          <span class="fi fi-gb" aria-hidden="true" title="United Kingdom"></span>
+        </h3>
+        <p>Evening care for siblings, homework & bedtime routines.</p>
+      </article>
+
+      <article class="chip card">
+        <h3 class="country-title">
+          Singapore
+          <span class="fi fi-sg" aria-hidden="true" title="Singapore"></span>
+        </h3>
+        <p>Kindergarten classroom teacher; events & field trips.</p>
+      </article>
+
+      <article class="chip card">
+        <h3 class="country-title">
+          Saudi Arabia
+          <span class="fi fi-sa" aria-hidden="true" title="Saudi Arabia"></span>
+        </h3>
+        <p>Special needs support; gentle transitions & safety.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
+</footer>
+</body>
+</html>
