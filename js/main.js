@@ -1,4 +1,3 @@
-// main.js (full)
 document.addEventListener('DOMContentLoaded', () => {
   // Footer year
   const y = document.getElementById('year');
@@ -7,32 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.navbar nav');
-
   if (toggle && nav) {
-    const toggleMenu = () => nav.classList.toggle('show');
-
+    const close = () => nav.classList.remove('show');
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleMenu();
+      nav.classList.toggle('show');
     });
-
-    // Close when clicking a nav link (good UX on mobile)
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => nav.classList.remove('show'));
-    });
-
-    // Close when clicking outside
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
     document.addEventListener('click', (e) => {
-      if (nav.classList.contains('show')) {
-        const insideNav = nav.contains(e.target) || toggle.contains(e.target);
-        if (!insideNav) nav.classList.remove('show');
-      }
+      if (nav.classList.contains('show') && !nav.contains(e.target) && !toggle.contains(e.target)) close();
     });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') nav.classList.remove('show');
-    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
 
   console.log('Site ready ✅');

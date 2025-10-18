@@ -3,89 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Overseas Babysitting · Teacher Maisarah</title>
-  <meta name="description" content="Clean, modern iOS-style portfolio for Teacher Maisarah, babysitter & early childhood educator in Kuala Lumpur, Malaysia.">
-
+  <title>Overseas Experience · May</title>
+  <meta name="description" content="Overseas experience of Siti Maisarah — trusted childcare for Malaysian families abroad and preschool teaching in Singapore.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Flag Icons (CDN) -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
-
+  <!-- Font + Flag Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <script defer src="js/main.js"></script>
 
   <style>
-    /* Saiz & align bendera kecil di sebelah kanan nama negara */
-    .country-title {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;               /* jarak antara teks & bendera */
-      margin: 0;
+    body { font-family: 'Baloo 2', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; }
+
+    h1 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: #ff2e85;
     }
-    .country-title .fi {
-      font-size: 16px;        /* kecil & kemas; ubah ke 14–18 ikut selera */
-      line-height: 1;
-      vertical-align: middle;
-      box-shadow: 0 1px 2px rgba(0,0,0,.06);
-      border-radius: 3px;     /* sedikit rounded supaya match card style */
+
+    .country-title{
+      display:inline-flex; align-items:center; gap:8px; margin:0; color:#111827;
+      font-family:'Baloo 2', sans-serif;
     }
+    .country-title .fi{
+      font-size:18px; line-height:1; border-radius:4px;
+      box-shadow:0 2px 4px rgba(0,0,0,.08);
+    }
+
+    /* grid & cards */
+    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .chip.card{
+      height:270px; display:flex; flex-direction:column; justify-content:flex-start;
+      padding:1.2rem; background:linear-gradient(180deg,#fff,#fff5fa);
+      border-radius:18px; transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .chip.card:hover{ transform:translateY(-6px); box-shadow:0 12px 20px rgba(255,46,133,.15); }
+    .chip.card p{ color:#4b5563; margin-top:.6rem; font-size:.96rem; line-height:1.5; }
+
+    @media (max-width:760px){ .chip.card{ height:auto; } }
   </style>
 </head>
 
 <body>
   <header class="navbar glass">
     <div class="brand">May</div>
-  
-    <!-- Hamburger Button -->
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-  
-    <!-- Nav links -->
     <nav>
       <a href="index.html">Home</a>
       <a href="experience.html">Experience</a>
-      <a href="overseas.html">Overseas</a>
+      <a href="overseas.html" aria-current="page">Overseas</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  
 
-<main class="container">
-  <section class="card fade">
-    <h1>Overseas Babysitting</h1>
-    <p>Experience with families in the UK, Singapore & Saudi Arabia — blending care routines with learning activities, cultural sensitivity and clear parent communication.</p>
+  <main class="container">
+    <section class="card fade">
+      <h1>Overseas Experience 🌍</h1>
+      <p class="muted" style="margin-bottom:1.2rem;">
+        A mix of childcare for Malaysian families abroad and hands-on classroom experience in Singapore, always with calm routines, safety and gentle care.
+      </p>
 
-    <div class="grid three">
-      <article class="chip card">
-        <h3 class="country-title">
-          United Kingdom
-          <span class="fi fi-gb" aria-hidden="true" title="United Kingdom"></span>
-        </h3>
-        <p>Evening care for siblings, homework & bedtime routines.</p>
-      </article>
+      <div class="grid">
+        <article class="chip card">
+          <h3 class="country-title">
+            United Kingdom
+            <span class="fi fi-gb" aria-hidden="true" title="United Kingdom"></span>
+          </h3>
+          <p>
+            Assisted Malaysian doctors working on long on-call shifts by caring for their children at home.
+            Kept homework, meal and bedtime routines consistent so parents could focus and kids felt secure.
+          </p>
+        </article>
 
-      <article class="chip card">
-        <h3 class="country-title">
-          Singapore
-          <span class="fi fi-sg" aria-hidden="true" title="Singapore"></span>
-        </h3>
-        <p>Kindergarten classroom teacher; events & field trips.</p>
-      </article>
+        <article class="chip card">
+          <h3 class="country-title">
+            Singapore
+            <span class="fi fi-sg" aria-hidden="true" title="Singapore"></span>
+          </h3>
+          <p>
+            Worked as a preschool teacher in Singapore. Planning lessons, managing classrooms and leading
+            creative & cultural activities. Built warm parent communication and structured daily routines.
+          </p>
+        </article>
 
-      <article class="chip card">
-        <h3 class="country-title">
-          Saudi Arabia
-          <span class="fi fi-sa" aria-hidden="true" title="Saudi Arabia"></span>
-        </h3>
-        <p>Special needs support; gentle transitions & safety.</p>
-      </article>
-    </div>
-  </section>
-</main>
+        <article class="chip card">
+          <h3 class="country-title">
+            Saudi Arabia
+            <span class="fi fi-sa" aria-hidden="true" title="Saudi Arabia"></span>
+          </h3>
+          <p>
+            Supported Malaysian nurses on hospital shifts with reliable childcare at home. Experience with
+            special needs care, gentle transitions and maintaining daily structure for comfort & safety.
+          </p>
+        </article>
 
-<footer class="footer">
-  <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
-</footer>
+        <article class="chip card">
+          <h3 class="country-title">
+            Thailand
+            <span class="fi fi-th" aria-hidden="true" title="Thailand"></span>
+          </h3>
+          <p>
+            Helped Malaysian families on holiday, childcare during shopping or private dinners, assistance
+            in-flight, and keeping lunch, nap & play schedules steady so trips stay smooth for everyone.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
+  </footer>
 </body>
 </html>

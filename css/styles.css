@@ -1,12 +1,15 @@
 :root{
-  --bg:#f6f7fb; 
-  --text:#111827; 
-  --muted:#6b7280; 
-  --card:#ffffff; 
-  --accent:#ff2e85;      /* accent pink */
+  --bg:#f6f7fb;
+  --text:#111827;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --accent:#ff2e85;              /* pink pekat (accent) */
   --border:rgba(17,24,39,0.08);
   --shadow:0 10px 30px rgba(0,0,0,0.06);
-  --whatsapp:#25D366;    /* WA green */
+  --whatsapp:#25D366;            /* WA green */
+
+  /* warna pastel untuk latar ceria */
+  --p1:#ffe2f0; --p2:#fff3c9; --p3:#dff6ff; --p4:#e7ffe6;
 }
 
 *{ box-sizing:border-box }
@@ -14,7 +17,26 @@ html,body{ margin:0; padding:0 }
 body{
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:var(--bg); color:var(--text); line-height:1.65;
+  overflow-x:hidden;
 }
+/* Latar ‘confetti blobs’ ceria */
+body::before, body::after{
+  content:""; position:fixed; inset:-20vmax; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(20vmax 20vmax at 10% 20%, var(--p1), transparent 60%),
+    radial-gradient(18vmax 18vmax at 90% 10%, var(--p2), transparent 60%),
+    radial-gradient(22vmax 22vmax at 20% 90%, var(--p3), transparent 60%),
+    radial-gradient(16vmax 16vmax at 80% 85%, var(--p4), transparent 60%);
+  filter: blur(24px) saturate(1.1);
+  animation: floatBg 22s linear infinite;
+}
+body::after{ animation-duration: 34s; opacity:.7 }
+@keyframes floatBg{
+  0%{ transform:translate3d(0,0,0) rotate(0deg) }
+  50%{ transform:translate3d(2%, -1%, 0) rotate(180deg) }
+  100%{ transform:translate3d(0,0,0) rotate(360deg) }
+}
+
 a{ color:var(--accent); text-decoration:none }
 
 /* ===== NAVBAR ===== */
@@ -25,8 +47,8 @@ a{ color:var(--accent); text-decoration:none }
   background:rgba(255,255,255,.7); backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
 }
-.navbar .brand{ font-weight:700; letter-spacing:.2px }
-.navbar nav a{ margin:0 .6rem; font-weight:500 }
+.navbar .brand{ font-weight:800; letter-spacing:.2px }
+.navbar nav a{ margin:0 .6rem; font-weight:600 }
 
 /* ===== HAMBURGER MENU ===== */
 .menu-toggle {
@@ -40,19 +62,46 @@ a{ color:var(--accent); text-decoration:none }
 
 /* ===== LAYOUT ===== */
 .container{ max-width:980px; margin:0 auto; padding:1rem }
-.card{ background:var(--card); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); padding:1.4rem; margin:1rem 0 }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  padding:1.4rem;
+  margin:1rem 0;
+  position:relative;
+}
 .hero{ display:grid; gap:1rem }
-.hero h1{ font-size:clamp(1.8rem,4vw,2.6rem); margin:.2rem 0 }
+.hero h1{
+  font-size:clamp(1.9rem,5vw,2.8rem); margin:.2rem 0;
+  font-weight:900; letter-spacing:.2px;
+}
 .muted{ color:var(--muted) }
+
+/* ‘Sticker’ kecil pada tajuk card (subtle, comel) */
+.card h3{
+  display:flex; align-items:center; gap:.5rem;
+}
+.card h3::after{
+  content:"✨";
+  font-size:1rem; opacity:.8; transform:rotate(-8deg);
+}
 
 /* ===== BUTTONS ===== */
 .cta-row{ display:flex; gap:.8rem; flex-wrap:wrap; margin-top:.8rem }
 .btn{
-  display:inline-block; padding:.7rem 1.1rem; border-radius:14px;
+  display:inline-block; padding:.7rem 1.1rem; border-radius:16px;
   border:1px solid var(--border); background:#fff; color:var(--text);
-  font-weight:600; box-shadow:0 6px 16px rgba(0,0,0,.06); transition:.25s;
+  font-weight:700; box-shadow:0 6px 16px rgba(0,0,0,.06); transition:.25s;
 }
 .btn:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(0,0,0,.08) }
+/* Fun micro-wiggle on tap/hover */
+.btn:active{ transform:translateY(0) scale(.98) }
+.btn:hover{ animation:wiggle .3s ease }
+@keyframes wiggle{
+  0%,100%{ transform:translateY(-1px) rotate(0deg) }
+  50%{ transform:translateY(-1px) rotate(-1.5deg) }
+}
 
 /* WhatsApp button with real logo */
 .btn.primary{
@@ -67,6 +116,18 @@ a{ color:var(--accent); text-decoration:none }
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23ffffff' d='M19.11 17.14c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.62.13-.19.26-.71.88-.87 1.06-.16.18-.32.2-.6.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.13-.16.18-.26.27-.45.09-.19.04-.35-.02-.48-.07-.13-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.47.07-.72.35-.25.26-.95.93-.95 2.26s.97 2.62 1.1 2.8c.13.18 1.9 3 4.6 4.2.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.11-.25-.18-.52-.31zM16.02 28c-2.09 0-4.14-.56-5.93-1.62L6 28l1.68-3.98A11.9 11.9 0 0 1 4 16.02C4 9.38 9.38 4 16.02 4A11.95 11.95 0 0 1 28 16.02C28 22.66 22.62 28 16.02 28zm0-21.6c-5.43 0-9.86 4.43-9.86 9.86 0 1.94.57 3.75 1.56 5.27l-.99 2.88 2.98-.94a9.8 9.8 0 0 0 6.31 2.16c5.43 0 9.86-4.43 9.86-9.86s-4.43-9.86-9.86-9.86z'/></svg>");
 }
 
+/* Floating WhatsApp (bottom-right) – optional tapi best untuk mobile */
+.fab-whatsapp{
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  padding:.9rem 1.2rem; border-radius:999px;
+  box-shadow:0 18px 40px rgba(37,211,102,.35);
+  animation: bob 2.8s ease-in-out infinite;
+}
+@keyframes bob{
+  0%,100%{ transform:translateY(0) }
+  50%{ transform:translateY(-5px) }
+}
+
 /* ===== GRIDS & LISTS ===== */
 .grid{ display:grid; gap:1rem }
 .grid.two{ grid-template-columns:repeat(2,minmax(0,1fr)) }
@@ -75,50 +136,32 @@ a{ color:var(--accent); text-decoration:none }
 
 /* ===== TIMELINE ===== */
 .timeline{
-  list-style:none;
-  margin:0;
-  padding:0 0 0 1.2rem;
-  border-left:3px solid var(--border);
+  list-style:none; margin:0; padding:0 0 0 1.2rem; border-left:3px solid var(--border);
 }
-.timeline li{
-  position:relative;
-  padding:0 0 1.4rem 1.2rem;
-}
+.timeline li{ position:relative; padding:0 0 1.4rem 1.2rem }
 .timeline li::before{
-  content:"";
-  position:absolute; left:-9px; top:4px;
-  width:12px; height:12px; border-radius:50%;
-  background:var(--accent);
+  content:""; position:absolute; left:-9px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent);
 }
-.timeline .time{
-  font-weight:700; color:var(--accent);
-  margin-bottom:.35rem;
-}
+.timeline .time{ font-weight:800; color:var(--accent); margin-bottom:.35rem }
 .timeline .content h3{ margin:0 0 .4rem }
-.timeline .content ul{
-  list-style:none;
-  margin:0; padding-left:1rem;
-}
+.timeline .content ul{ list-style:none; margin:0; padding-left:1rem }
 .timeline .content ul li{
-  position:relative;
-  padding-left:.9rem;
-  margin-bottom:.35rem;
+  position:relative; padding-left:.9rem; margin-bottom:.35rem
 }
 .timeline .content ul li::before{
-  content:"";
-  position:absolute; left:0; top:.6em;
-  width:6px; height:6px; border-radius:50%;
-  background:var(--accent);
+  content:""; position:absolute; left:0; top:.6em; width:6px; height:6px; border-radius:50%; background:var(--accent)
 }
 
 /* ===== PRICING ===== */
 .pricing{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:.5rem 0 }
 .price-card{
-  border:1px solid var(--border);
-  border-radius:16px; padding:1rem;
-  background:linear-gradient(180deg,#fff,rgba(255,255,255,.85));
+  border:1px solid var(--border); border-radius:18px; padding:1rem;
+  background:
+    linear-gradient(180deg,#fff,rgba(255,255,255,.9)) padding-box,
+    linear-gradient(120deg, var(--p1), var(--p2), var(--p3)) border-box;
+  border:2px solid transparent;           /* gradient border manis */
 }
-.price{ font-weight:800; font-size:1.2rem }
+.price{ font-weight:900; font-size:1.2rem }
 
 /* ===== FOOTER ===== */
 .footer{ padding:1.4rem; text-align:center; color:var(--muted) }

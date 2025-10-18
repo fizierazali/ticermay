@@ -7,52 +7,81 @@
   <meta name="description" content="Contact page for May, babysitter & early childhood educator.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Page look */
-    .booking-wrap{
-      min-height:calc(100vh - 120px); /* ruang tinggal selepas header/footer */
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      background:linear-gradient(135deg,#ffffff,#ffeef5);
-      text-align:center; overflow:hidden;
-      padding:2rem 1rem;
-      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,sans-serif;
+    body {
+      font-family: 'Baloo 2', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
     }
-    h1{
-      font-size:clamp(2rem,7vw,3.2rem);
-      font-weight:800; color:#ff2e85; margin:0 1rem 2rem;
-      letter-spacing:.5px;
-      animation:spin 8s linear infinite;
+
+    /* Background */
+    .booking-wrap {
+      min-height: calc(100vh - 120px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top left, #fff5fa 0%, #ffe3ef 40%, #ffffff 100%);
+      text-align: center;
+      padding: 2rem 1rem;
+      overflow: hidden;
     }
-    @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
-    .cta{ display:flex; justify-content:center; }
+
+    /* Animated heading */
+    h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      font-weight: 800;
+      color: #ff2e85;
+      margin: 0 1rem 2.4rem;
+      letter-spacing: 0.6px;
+      animation: wave 3s ease-in-out infinite;
+      text-shadow: 0 3px 12px rgba(255, 46, 133, 0.2);
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(1deg) scale(1.03); }
+      50% { transform: rotate(-1deg) scale(1.02); }
+      75% { transform: rotate(0.5deg) scale(1.04); }
+    }
+
+    /* Button layout */
+    .cta {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* WhatsApp button hover animation */
+    .btn.primary {
+      font-size: 1.05rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.4);
+    }
   </style>
   <script defer src="js/main.js"></script>
 </head>
+
 <body>
-  <!-- Header shown (kept consistent with other pages) -->
+  <!-- Header (same across pages) -->
   <header class="navbar glass">
     <div class="brand">May</div>
-  
-    <!-- Hamburger Button -->
-    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-  
-    <!-- Nav links -->
     <nav>
       <a href="index.html">Home</a>
       <a href="experience.html">Experience</a>
       <a href="overseas.html">Overseas</a>
       <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </nav>
   </header>
-  
-  
 
+  <!-- Main content -->
   <main class="booking-wrap">
     <h1>EHHHH NAK BOOKING KE YEAYYYYY 🎉</h1>
 
     <div class="cta">
-      <!-- Reuse .btn.primary so WhatsApp logo appears via CSS ::before -->
       <a class="btn primary"
          href="https://wa.me/601128990158?text=Hi%20May!"
          target="_blank" rel="noopener">
@@ -61,7 +90,7 @@
     </div>
   </main>
 
-  <!-- Footer shown -->
+  <!-- Footer -->
   <footer class="footer">
     <p>© <span id="year"></span> May · Kuala Lumpur, Malaysia</p>
   </footer>

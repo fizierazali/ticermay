@@ -4,86 +4,100 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home · May</title>
-  <meta name="description" content="Clean, modern iOS-style portfolio for Siti Maisarah, babysitter & early childhood educator in Kuala Lumpur, Malaysia.">
+  <meta name="description" content="Modern, cheerful portfolio for Siti Maisarah — babysitter & early childhood educator in Kuala Lumpur, Malaysia.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
   <script defer src="js/main.js"></script>
+  <style>
+    /* Custom font for headings */
+    h1, h2, h3 { font-family: 'Baloo 2', sans-serif; }
+
+    /* Subtle floating animation for image */
+    .floaty {
+      animation: floaty 4s ease-in-out infinite;
+    }
+    @keyframes floaty {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar glass">
     <div class="brand">May</div>
-  
-    <!-- Hamburger Button -->
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-  
-    <!-- Nav links -->
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="experience.html">Experience</a>
       <a href="overseas.html">Overseas</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  
 
-<main class="container">
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
 
-  <section class="card fade">
-    <!-- 2-column hero: left image, right text -->
-    <div class="grid two" style="align-items:center;">
-      <figure style="text-align:center; margin:0;">
-        <img
-          src="assets/profile.jpeg"
-          alt="Profile — Siti Maisarah"
-          style="
-            width:100%;
-            max-width:220px;
-            aspect-ratio:1/1;
-            object-fit:cover;
-            border-radius:12px; /* <-- petak (ubah ke 0 untuk tepi tajam) */
-            box-shadow:0 10px 24px rgba(0,0,0,.08);
-            border:4px solid #fff;
-          "
-        />
-        <figcaption style="font-size:.9rem; color:#6b7280; margin-top:.6rem;">
-        </figcaption>
-      </figure>
+    <!-- Hero Section -->
+    <section class="card fade">
+      <div class="grid two" style="align-items:center;">
+        <figure style="text-align:center; margin:0;">
+          <img
+            class="floaty"
+            src="assets/profile.jpeg"
+            alt="Profile — Siti Maisarah"
+            style="
+              width:100%;
+              max-width:220px;
+              aspect-ratio:1/1;
+              object-fit:cover;
+              border-radius:12px;
+              box-shadow:0 10px 24px rgba(0,0,0,.08);
+              border:4px solid #fff;
+            "
+          />
+        </figure>
 
-      <div class="hero-text">
-        <h1>Hi, I'm May</h1>
-        <p>Babysitter & early childhood educator based in Kuala Lumpur. I provide kind, reliable care for infants and children up to 8 years old. Diploma in Early Childhood Education (SKM Level 3). Comfortable with special needs support.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="https://wa.me/601128990158?text=Hi%20May!" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn" href="pricing.html">See Pricing</a>
+        <div class="hero-text">
+          <h1>Hi, I'm May! 👋</h1>
+          <p>I'm a babysitter and early childhood educator based in Kuala Lumpur. I provide kind, reliable care for infants and children up to 8 years old. Diploma in Early Childhood Education (SKM Level 3) and comfortable with special needs support.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/601128990158?text=Hi%20May!" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="pricing.html">See Pricing</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="grid two fade">
-    <article class="card">
-      <h3>What I offer</h3>
-      <ul class="list">
-        <li>Play-based learning (stories, crafts, routines)</li>
-        <li>Infant care (EBM handling, naps, hygiene)</li>
-        <li>Special needs experience (autism, hydrocephalus)</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Highlights</h3>
-      <ul class="list">
-        <li>Local & overseas babysitting</li>
-        <li>Fluent in Malay & English</li>
-        <li>Gentle, patient & punctual</li>
-      </ul>
-    </article>
-  </section>
+    <!-- Offerings Section -->
+    <section class="grid two fade">
+      <article class="card">
+        <h3>What I Offer 🌼</h3>
+        <ul class="list">
+          <li>Play-based learning (stories, crafts, routines)</li>
+          <li>Infant care (EBM handling, naps, hygiene)</li>
+          <li>Special needs experience (autism, hydrocephalus)</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Highlights 🌈</h3>
+        <ul class="list">
+          <li>Local & overseas babysitting</li>
+          <li>Fluent in Malay & English</li>
+          <li>Gentle, patient & punctual</li>
+        </ul>
+      </article>
+    </section>
 
-</main>
+  </main>
 
-<footer class="footer">
-  <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
-</footer>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
+  </footer>
+
 </body>
 </html>

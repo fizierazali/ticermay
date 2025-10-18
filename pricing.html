@@ -4,57 +4,92 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pricing · May</title>
-  <meta name="description" content="Clean, modern iOS-style portfolio for Teacher Maisarah, babysitter & early childhood educator in Kuala Lumpur, Malaysia.">
+  <meta name="description" content="Flexible babysitting pricing by Siti Maisarah — simple hourly rate and transparent transport fee.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
   <script defer src="js/main.js"></script>
+  <style>
+    body { font-family: 'Baloo 2', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: #ff2e85;
+      font-family: 'Baloo 2', sans-serif;
+    }
+
+    .pricing {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .price-card {
+      background: linear-gradient(180deg, #fff, #fff5fa);
+      border-radius: 18px; text-align: center;
+      padding: 1.5rem; height: 230px;
+      display: flex; flex-direction: column; justify-content: center;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 2px 8px rgba(255,46,133,.05);
+    }
+    .price-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(255,46,133,.15); }
+
+    .price { font-size: 1.4rem; font-weight: 700; color: #111827; margin: .3rem 0; }
+    .muted { color: #6b7280; font-size: .95rem; }
+
+    @media (max-width:760px){ .price-card{ height:auto; padding:1.2rem; } }
+  </style>
 </head>
 <body>
   <header class="navbar glass">
     <div class="brand">May</div>
-  
-    <!-- Hamburger Button -->
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-  
-    <!-- Nav links -->
     <nav>
       <a href="index.html">Home</a>
       <a href="experience.html">Experience</a>
       <a href="overseas.html">Overseas</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="pricing.html" aria-current="page">Pricing</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  
-<main class="container">
 
-<section class="card fade">
-  <h1>Pricing</h1>
-  <div class="pricing">
-    <div class="price-card">
-      <h3>Hourly</h3>
-      <p class="price">RM 22 – RM 26 / hour</p>
-      <p class="muted">Depends on time & location</p>
-    </div>
-    <div class="price-card">
-      <h3>Daytime session</h3>
-      <p class="price">Custom</p>
-      <p class="muted">3–6 hours (play, simple meals, naps)</p>
-    </div>
-    <div class="price-card">
-      <h3>Overnight / Events</h3>
-      <p class="price">Custom</p>
-      <p class="muted">Message for a quote</p>
-    </div>
-  </div>
-  <div class="cta-row">
-    <a class="btn primary" href="https://wa.me/601128990158?text=Hi%20May!" target="_blank" rel="noopener">WhatsApp to Book</a>
-  </div>
-</section>
+  <main class="container">
+    <section class="card fade">
+      <h1>Pricing 🌸</h1>
+      <p class="muted" style="margin-bottom:1.4rem;">
+        Simple and transparent pricing — perfect for families looking for quality, personalized care.
+      </p>
 
-</main>
-<footer class="footer">
-  <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
-</footer>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>Hourly ✨</h3>
+          <p class="price">RM 23 / hour</p>
+          <p class="muted">Flat rate for all sessions</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Overnight / Events ✨</h3>
+          <p class="price">Custom</p>
+          <p class="muted">Message for a personalized quote</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Transport Fee 🚗</h3>
+          <p class="price">RM 0.50 / km</p>
+          <p class="muted">
+            Calculated one-way only — from Seri Kembangan to your location.<br>
+            (Return trip not charged)
+          </p>
+        </div>
+      </div>
+
+      <p class="muted" style="text-align:center; margin-top:2rem;">
+        Ready to book? Head to the <a href="contact.html" style="color:#ff2e85;">Contact</a> page to WhatsApp May.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Siti Maisarah · Kuala Lumpur, Malaysia</p>
+  </footer>
 </body>
 </html>
