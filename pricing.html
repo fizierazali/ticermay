@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pricing · May</title>
-  <meta name="description" content="Flexible babysitting pricing by Siti Maisarah — simple hourly rate and transparent transport fee.">
+  <meta name="description" content="Flexible babysitting pricing by Siti Maisarah — simple hourly rate and transparent add-ons.">
   <link rel="icon" href="assets/favicon.png">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
   <script defer src="js/main.js"></script>
+
   <style>
     body { font-family: 'Baloo 2', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; }
 
@@ -19,26 +20,40 @@
     }
 
     .pricing {
-      display: grid; gap: 1rem;
+      display: grid;
+      gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
     .price-card {
       background: linear-gradient(180deg, #fff, #fff5fa);
-      border-radius: 18px; text-align: center;
-      padding: 1.5rem; height: 230px;
-      display: flex; flex-direction: column; justify-content: center;
+      border-radius: 18px;
+      text-align: center;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       transition: transform .25s ease, box-shadow .25s ease;
       box-shadow: 0 2px 8px rgba(255,46,133,.05);
     }
     .price-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(255,46,133,.15); }
 
-    .price { font-size: 1.4rem; font-weight: 700; color: #111827; margin: .3rem 0; }
+    .price { font-size: 1.4rem; font-weight: 800; color: #111827; margin: .3rem 0; }
     .muted { color: #6b7280; font-size: .95rem; }
 
-    @media (max-width:760px){ .price-card{ height:auto; padding:1.2rem; } }
+    .terms {
+      margin-top: 1.2rem;
+      padding: 1.2rem 1.2rem;
+    }
+    .terms h3 { margin: 0; }
+    .terms ul { margin-top: .7rem; }
+
+    @media (max-width:760px){
+      .price-card{ padding:1.2rem; }
+    }
   </style>
 </head>
+
 <body>
   <header class="navbar glass">
     <div class="brand">May</div>
@@ -54,36 +69,55 @@
 
   <main class="container">
     <section class="card fade">
-      <h1>Pricing 🌸</h1>
+      <h1>Rate for 2025 & 2026 🌸</h1>
       <p class="muted" style="margin-bottom:1.4rem;">
-        Simple and transparent pricing — perfect for families looking for quality, personalized care.
+        Simple & transparent pricing — based on session type and add-ons.
       </p>
 
       <div class="pricing">
         <div class="price-card">
-          <h3>Hourly ✨</h3>
+          <h3>Normal Babysit 🏡</h3>
           <p class="price">RM 23 / hour</p>
-          <p class="muted">Flat rate for all sessions</p>
+          <p class="muted">At home / hospital / hotel</p>
         </div>
 
         <div class="price-card">
-          <h3>Overnight / Events ✨</h3>
-          <p class="price">Custom</p>
-          <p class="muted">Message for a personalized quote</p>
+          <h3>Outdoor Babysit 🎡</h3>
+          <p class="price">RM 26 / hour</p>
+          <p class="muted">Indoor playground / event space</p>
         </div>
 
         <div class="price-card">
-          <h3>Transport Fee 🚗</h3>
-          <p class="price">RM 0.50 / km</p>
-          <p class="muted">
-            Calculated one-way only — from Seri Kembangan to your location.<br>
-            (Return trip not charged)
-          </p>
+          <h3>Travel ✈️</h3>
+          <p class="price">RM 300 / day</p>
+          <p class="muted">For travel sessions</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Public Holiday / Last Minute ⏰</h3>
+          <p class="price">+ RM 50</p>
+          <p class="muted">Booking less than 12 hours</p>
+        </div>
+
+        <div class="price-card">
+          <h3>Activities 🎨</h3>
+          <p class="price">+ RM 5 / hour</p>
+          <p class="muted">Messy play / 3M / practical life</p>
         </div>
       </div>
 
-      <p class="muted" style="text-align:center; margin-top:2rem;">
-        Ready to book? Head to the <a href="contact.html" style="color:#ff2e85;">Contact</a> page to WhatsApp May.
+      <div class="card terms">
+        <h3>Notes</h3>
+        <ul class="list">
+          <li>All prices stated above are for <b>one child</b> only.</li>
+          <li>Each additional child will be charged <b>RM 12 / hour</b>.</li>
+          <li>All prices are <b>fixed</b> and <b>non-negotiable</b>.</li>
+          <li><b>RM 50 deposit</b> is required to secure the date, and it is <b>non-refundable</b>.</li>
+        </ul>
+      </div>
+
+      <p class="muted" style="text-align:center; margin-top:1.6rem;">
+        Ready to book? Go to the <a href="contact.html" style="color:#ff2e85;">Contact</a> page to WhatsApp May.
       </p>
     </section>
   </main>
